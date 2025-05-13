@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de Física</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <div class="contenedor">
+    <h1>Calculadora de Física</h1>
+
+    <label for="tipo">Elige el tipo de cálculo:</label>
+    <select id="tipo" onchange="mostrarFormulario()">
+      <option value="">-- Selecciona --</option>
+      <option value="impulso">Impulso y Cantidad de Movimiento</option>
+      <option value="parabolico">Movimiento Parabólico</option>
+      <option value="mas">Movimiento Armónico Simple</option>
+    </select>
+
+    <div id="formulario-impulso" class="formulario oculto">
+      <h2>Impulso y Cantidad de Movimiento</h2>
+      <label>Fuerza (N):</label>
+      <input type="number" id="fuerza" />
+      <label>Masa (kg):</label>
+      <input type="number" id="masa-impulso" />
+      <label>Tiempo (s):</label>
+      <input type="number" id="tiempo" />
+      <button onclick="calcularImpulso()">Calcular</button>
+      <p id="resultado-impulso"></p>
+    </div>
+
+    <div id="formulario-parabolico" class="formulario oculto">
+      <h2>Movimiento Parabólico</h2>
+      <label>Velocidad inicial (m/s):</label>
+      <input type="number" id="v0" />
+      <label>Ángulo (°):</label>
+      <input type="number" id="angulo" />
+      <button onclick="calcularParabolico()">Calcular</button>
+      <p id="resultado-parabolico"></p>
+    </div>
+
+    <div id="formulario-mas" class="formulario oculto">
+      <h2>Movimiento Armónico Simple</h2>
+      <label>Amplitud (m):</label>
+      <input type="number" id="amplitud" />
+      <label>Constante de resorte (N/m):</label>
+      <input type="number" id="k" />
+      <label>Masa (kg):</label>
+      <input type="number" id="masa-mas" />
+      <label>Tiempo (s):</label>
+      <input type="number" id="tiempo-mas" />
+      <button onclick="calcularMAS()">Calcular</button>
+      <p id="resultado-mas"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
